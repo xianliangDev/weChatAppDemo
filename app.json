@@ -1,0 +1,69 @@
+{
+  "pages": [
+    "pages/tabbar/Component/index",
+    "pages/tabbar/Api/index",
+    "pages/logs/logs"
+  ],
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/tabbar/Component/index",
+        "text": "Component",
+        "iconPath": "./image/icon_component.png",
+        "selectedIconPath": "./image/icon_component_HL.png"
+      },
+      {
+        "pagePath": "pages/tabbar/Api/index",
+        "iconPath": "./image/icon_API.png",
+        "selectedIconPath": "./image/icon_API_HL.png",
+        "text": "Api"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "navigationBarTitleText": "小程序官方组件",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#F8F8F8"
+  },
+  "subPackages": [
+    {
+      "root": "pages/Componet/",
+      "pages": [
+        "view/view",
+        "scroll-view/scroll-view",
+        "swiper/swiper",
+        "audio/audio",
+        "button/button",
+        "canvas/canvas",
+        "checkbox/checkbox",
+        "form/form",
+        "icon/icon",
+        "image/image",
+        "input/input",
+        "label/label",
+        "map/map",
+        "navigator/navigator",
+        "picker/picker",
+        "progress/progress",
+        "radio/radio",
+        "slider/slider",
+        "switch/switch",
+        "text/text",
+        "textarea/textarea",
+        "video/video"
+      ]
+    },
+    {
+      "root": "pages/Api/",
+      "pages": [
+        "image/image"
+      ]
+    }
+  ]
+}
