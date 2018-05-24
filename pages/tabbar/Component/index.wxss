@@ -1,0 +1,3 @@
+/* pages/tabbar/Component/index.wxss */
+
+@import "../../common/index.wxss";
