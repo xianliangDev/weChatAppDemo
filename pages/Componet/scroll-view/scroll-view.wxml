@@ -1,2 +1,21 @@
 <!--pages/Componet/scroll-view/scroll-view.wxml-->
-<text>pages/Componet/scroll-view/scroll-view.wxml</text>
+<import src='../../common/head.wxml'/>
+
+<view class='container'>
+  <template is='head'data="{{title:'scrollview'}}"/>
+  <view class='page-body'>
+    <view class='page-section'>
+      <view class='page-section-title'>
+        <text>verizon \n 纵向排列</text>
+      </view>
+      <view class='page-section-spacing'>
+       <scroll-view></scroll-view>
+      </view>
+    </view>
+    <view class='page-section'>
+      <view class='page-section-title'>
+        <text>horizon \n 横向排列</text>
+      </view>
+    </view>
+  </view>
+</view>

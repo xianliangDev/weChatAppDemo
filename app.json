@@ -27,7 +27,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F8F8F8",
-    "navigationBarTitleText": "小程序官方组件",
+    "navigationBarTitleText": "组件项目合成",
     "navigationBarTextStyle": "black",
     "backgroundColor": "#F8F8F8"
   },
