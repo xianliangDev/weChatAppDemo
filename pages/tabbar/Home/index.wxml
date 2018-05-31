@@ -1,0 +1,25 @@
+<!--pages/tabbar/Home/index.wxml-->
+<view class='container'>
+  <!---banner图-->
+  <view class='home-banner'>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
+      <block wx:for="{{background}}" wx:key="*this">
+        <swiper-item>
+          <view class="swiper-item {{item}}"></view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!--theme四大主题 线上商品 附近商家 一起拼团 推荐好友-->
+  <view class=''></view>
+  <!--快速进入商品类目专区-->
+  <view class=''></view>
+  <!--推荐商品 固定排版分布流-->
+  <view class=''>
+    <view class=''></view>
+    <view class=''></view>
+    <view class=''></view>
+  </view>
+  <!--分类-->
+  <view class=''></view>
+</view>

@@ -1,33 +1,56 @@
 {
   "pages": [
+    "pages/tabbar/Home/index",
+    "pages/tabbar/Me/index",
+    "pages/tabbar/ShopCart/index",
+    "pages/tabbar/Category/index",
+    "pages/tabbar/Discovery/index",
     "pages/tabbar/Component/index",
     "pages/tabbar/Api/index",
     "pages/logs/logs"
   ],
   "tabBar": {
     "color": "#7A7E83",
-    "selectedColor": "#3cc51f",
     "borderStyle": "black",
+    "selectedColor": "rgba(221,39,39,1.0)",
     "backgroundColor": "#ffffff",
     "list": [
       {
-        "pagePath": "pages/tabbar/Component/index",
-        "text": "Component",
-        "iconPath": "./image/icon_component.png",
-        "selectedIconPath": "./image/icon_component_HL.png"
+        "pagePath": "pages/tabbar/Home/index",
+        "text": "首页",
+        "iconPath": "./image/tab_home_off@2x.png",
+        "selectedIconPath": "./image/tab_home_on@2x.png"
       },
       {
-        "pagePath": "pages/tabbar/Api/index",
-        "iconPath": "./image/icon_API.png",
-        "selectedIconPath": "./image/icon_API_HL.png",
-        "text": "Api"
+        "pagePath": "pages/tabbar/Category/index",
+        "iconPath": "./image/tab_category_off@2x.png",
+        "selectedIconPath": "./image/tab_category_on@2x.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/tabbar/ShopCart/index",
+        "iconPath": "./image/tab_shopping_cart_off@2x.png",
+        "selectedIconPath": "./image/tab_shopping_cart_on@2x.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/tabbar/Discovery/index",
+        "iconPath": "./image/tab_discovery_off@2x.png",
+        "selectedIconPath": "./image/tab_discovery_on@2x.png",
+        "text": "发现"
+      },
+      {
+        "pagePath": "pages/tabbar/Me/index",
+        "iconPath": "./image/tab_my_off@2x.png",
+        "selectedIconPath": "./image/tab_my_on@2x.png",
+        "text": "我的"
       }
     ]
   },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F8F8F8",
-    "navigationBarTitleText": "组件项目合成",
+    "navigationBarTitleText": "多米云商超市",
     "navigationBarTextStyle": "black",
     "backgroundColor": "#F8F8F8"
   },
