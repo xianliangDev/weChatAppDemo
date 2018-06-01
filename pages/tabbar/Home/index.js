@@ -1,4 +1,5 @@
 // pages/tabbar/Home/index.js
+var urlConfig = require('../../../urlConfig.js')
 Page({
 
   /**
@@ -6,6 +7,24 @@ Page({
    */
   data: {
     background: ['demo-text-1', 'demo-text-2', 'demo-text-3'],
+    themes:[
+      {
+        title:'线上商品',
+        iconUrl:'../../../image/top_xian_shang_shang_pin@2x.png'
+      },
+      {
+        title: '附近商家',
+        iconUrl: '../../../image/top_fu_jin_shang_jia@2x.png'
+      },
+      {
+        title: '一起拼团',
+        iconUrl: '../../../image/top_yi_qi_pin_tuan@2x.png'
+      },
+      {
+        title: '推荐好友',
+        iconUrl: '../../../image/top_tui_jian_hao_you@2x.png'
+      }
+    ],
     indicatorDots: true,
     vertical: false,
     autoplay: false,
@@ -13,15 +32,46 @@ Page({
     interval: 2000,
     duration: 500,
     previousMargin: 0,
-    nextMargin: 0
+    nextMargin: 0,
+    swiperCurrent: 0,
+    selectCurrent: 0,
+    scrollTop:0,
+    advertisingJsons:[],
+    hotSubjectJson:{},
+    nearSubjectJson:{},
+    panicBuyingSubjectJson:{},
+    presellSubjectJson:{},
+    subjectJsons:[]
+
+
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this;
     wx.request({
-      url: '',
+      url: '' + urlConfig.rootDomain + '/' + urlConfig.trade_API,
+      data: {
+        mode:'1.1'
+      },
+      method:'POST',
+      header: {
+        'content-type': 'application/json;text/html;charset=UTF-8' // 默认值
+      },
+      success: function (res) {
+        console.log(res.data)
+        that.setData({
+          advertisingJsons : res.data.advertisingJsons,
+          hotSubjectJson : res.data.hotSubjectJson,
+          nearSubjectJson : res.data.nearSubjectJson,
+          panicBuyingSubjectJson : res.data.panicBuyingSubjectJson,
+          presellSubjectJson : res.data.presellSubjectJson
+        });
+        
+      }
     })
   },
 
