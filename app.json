@@ -7,7 +7,9 @@
     "pages/tabbar/Discovery/index",
     "pages/tabbar/Component/index",
     "pages/tabbar/Api/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/Home/index",
+    "pages/Me/index"
   ],
   "tabBar": {
     "color": "#7A7E83",
@@ -53,40 +55,5 @@
     "navigationBarTitleText": "多米云商超市",
     "navigationBarTextStyle": "black",
     "backgroundColor": "#F8F8F8"
-  },
-  "subPackages": [
-    {
-      "root": "pages/Componet/",
-      "pages": [
-        "view/view",
-        "scroll-view/scroll-view",
-        "swiper/swiper",
-        "audio/audio",
-        "button/button",
-        "canvas/canvas",
-        "checkbox/checkbox",
-        "form/form",
-        "icon/icon",
-        "image/image",
-        "input/input",
-        "label/label",
-        "map/map",
-        "navigator/navigator",
-        "picker/picker",
-        "progress/progress",
-        "radio/radio",
-        "slider/slider",
-        "switch/switch",
-        "text/text",
-        "textarea/textarea",
-        "video/video"
-      ]
-    },
-    {
-      "root": "pages/Api/",
-      "pages": [
-        "image/image"
-      ]
-    }
-  ]
+  }
 }

@@ -21,14 +21,12 @@
   <view class='sub-themeview'>
     <block wx:for="{{themes}}" wx:key="*key">
       <view class='themeView-item'>
-         <image src='{{item.iconUrl}}' class='themeView-item-image' mode="widthFix"></image> 
+        <image src='{{item.iconUrl}}' class='themeView-item-image'></image>
       </view>
     </block>
   </view>
   <!--快速进入商品类目专区-->
-  <view style='width:{{hotRushViewWidth}}px;height:{{hotRushViewHeight}}px;background-color: red;'>
-    <view style='width:{{hotRushViewWidth}}px;height:{{hotRushViewHeight}}px;background-color: red;'></view>
-  </view>
+  <view class=''></view>
   <!--推荐商品 固定排版分布流-->
   <view class=''>
     <view class=''></view>

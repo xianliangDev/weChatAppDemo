@@ -1,5 +1,5 @@
-// pages/tabbar/Home/index.js
-var urlConfig = require('../../../urlConfig.js')
+// pages/Home/index.js
+var urlConfig = require('../../urlConfig.js')
 Page({
 
   /**
@@ -7,10 +7,10 @@ Page({
    */
   data: {
     background: ['demo-text-1', 'demo-text-2', 'demo-text-3'],
-    themes:[
+    themes: [
       {
-        title:'线上商品',
-        iconUrl:'../../../image/top_xian_shang_shang_pin@2x.png'
+        title: '线上商品',
+        iconUrl: '../../../image/top_xian_shang_shang_pin@2x.png'
       },
       {
         title: '附近商家',
@@ -35,55 +35,20 @@ Page({
     nextMargin: 0,
     swiperCurrent: 0,
     selectCurrent: 0,
-    scrollTop:0,
-    advertisingJsons:[],
-    hotSubjectJson:{},
-    nearSubjectJson:{},
-    panicBuyingSubjectJson:{},
-    presellSubjectJson:{},
-    subjectJsons:[],
-
-    /**自适应功能的变量需要 */
-    hotRushViewWidth:0,
-    hotRushViewHeight:0
+    scrollTop: 0,
+    advertisingJsons: [],
+    hotSubjectJson: {},
+    nearSubjectJson: {},
+    panicBuyingSubjectJson: {},
+    presellSubjectJson: {},
+    subjectJsons: []
 
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-    wx.request({
-      url: '' + urlConfig.rootDomain + '/' + urlConfig.trade_API,
-      data: {
-        mode:'1.1'
-      },
-      method:'POST',
-      header: {
-        'content-type': 'application/json;text/html;charset=UTF-8' // 默认值
-      },
-      success: function (res) {
-        console.log(res.data)
-        that.setData({
-          advertisingJsons : res.data.advertisingJsons,
-          hotSubjectJson : res.data.hotSubjectJson,
-          nearSubjectJson : res.data.nearSubjectJson,
-          panicBuyingSubjectJson : res.data.panicBuyingSubjectJson,
-          presellSubjectJson : res.data.presellSubjectJson
-        });
-        
-      }
-    });
-    wx.getSystemInfo({
-      success: function(res) {
-        var windowWidth = res.windowWidth;
-        var windowHeight = res.windowHeight; 
-        that.hotRushViewWidth = windowWidth;
-        that.hotRushViewHeight = windowWidth/3.0;
-        console.log('windowWidth: ' + windowWidth); 
-      },
-    })
+  
   },
 
   /**
