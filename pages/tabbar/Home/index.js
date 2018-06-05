@@ -77,11 +77,12 @@ Page({
     });
     wx.getSystemInfo({
       success: function(res) {
-        var windowWidth = res.windowWidth;
-        var windowHeight = res.windowHeight; 
-        that.hotRushViewWidth = windowWidth;
-        that.hotRushViewHeight = windowWidth/3.0;
-        console.log('windowWidth: ' + windowWidth); 
+        that.setData(
+          { 
+            hotRushViewWidth: res.windowWidth,
+            hotRushViewHeight : res.windowWidth
+          }
+        ) 
       },
     })
   },

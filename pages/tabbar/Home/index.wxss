@@ -107,4 +107,6 @@
 /**热销、新品、限时 */
 .hotRushView{
   background-color: red;
+  width: 100%;
+  height: auto;
 }
