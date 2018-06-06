@@ -44,8 +44,9 @@ Page({
     subjectJsons:[],
 
     /**自适应功能的变量需要 */
-    hotRushViewWidth:0,
-    hotRushViewHeight:0
+    subThemeViewWidth:0,
+    subThemeViewHeight:0,
+    bannerHeight:0,
 
   },
 
@@ -79,8 +80,9 @@ Page({
       success: function(res) {
         that.setData(
           { 
-            hotRushViewWidth: res.windowWidth,
-            hotRushViewHeight : res.windowWidth
+            subThemeViewWidth: res.windowWidth/4.0,
+            subThemeViewHeight: res.windowWidth/4.0*(197/186.0),
+            bannerHeight:res.windowWidth*3/4.0,
           }
         ) 
       },
