@@ -5,7 +5,7 @@
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
       <block wx:for="{{advertisingJsons}}" wx:key="*this">
         <swiper-item>
-          <image bindtap='' data-id="{{item.url}}" src='{{item.image}}' class='slide-image' width="750rpx" height="562.5rpx"></image>
+          <image bindtap='' data-id="{{item.url}}" src='{{item.image}}' style='width: 100%;height:{{bannerHeight}}'></image>
         </swiper-item>
       </block>
     </swiper>
@@ -18,16 +18,16 @@
     </view>
   </view>
   <!--theme四大主题 线上商品 附近商家 一起拼团 推荐好友-->
-  <view class='sub-themeview'>
-    <block wx:for="{{themes}}" wx:key="*key">
-      <view class='themeView-item' style='width:25%;height:{{hotRushViewHeight}}rpx'>
-         <image src='{{item.iconUrl}}' class='themeView-item-image' mode="widthFix"></image> 
-      </view>
+   <view class='sub-themeview' style='width: 100%;height:{{subThemeViewHeight}}px'> 
+     <block wx:for="{{themes}}" wx:key="*key" style='width:25%;height:{{subThemeViewHeight-20}}px'> 
+          <image src='{{item.iconUrl}}'           mode="widthFix" style='width:98%'></image>  
     </block>
-  </view>
+   </view> 
   <!--快速进入商品类目专区-->
   <view class='hotRushView'>
-    <view style='width:{{hotRushViewWidth}}px;height:{{hotRushViewHeight}}px;background-color: red;'></view>
+     <image src='{{hotSubjectJson.outerShowImageUrl}}' class='hotRushView-subView'></image> 
+      <image src='{{presellSubjectJson.outerShowImageUrl}}' class='hotRushView-subView'></image> 
+       <image src='{{panicBuyingSubjectJson.outerShowImageUrl}}' class='hotRushView-subView'></image> 
   </view>
   <!--推荐商品 固定排版分布流-->
   <view class=''>
@@ -36,5 +36,6 @@
     <view class=''></view>
   </view>
   <!--分类-->
-  <view class=''></view>
+  <view class='catogary-view'>
+  </view>
 </view>

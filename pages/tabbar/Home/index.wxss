@@ -1,14 +1,11 @@
 /* pages/tabbar/Home/index.wxss */
 .home-banner {
   width: 100%;
-  height: 150;
+  height: auto;
   background-color: #F2f2f2;
+  
 }
 
-.swiper-item{
-  display: block;
-  height: 150px;
-}
 
 .home-banner .dots {
     position: absolute;
@@ -83,6 +80,11 @@
   position: relative;
 }
 
+.swiper-item-style{
+  width: 100%;
+  height: 562.5rpx;
+  background-color: red;
+}
 .sub-themeview{
   width: 100%;
   height: auto;
@@ -92,7 +94,6 @@
   justify-content: center;
    margin-top: 20rpx;
    margin-bottom: 20rpx; 
-   background-color: orange;
 }
 .themeView-item-image{
   width: 99%;
@@ -102,7 +103,21 @@
 
 /**热销、新品、限时 */
 .hotRushView{
-  background-color: red;
   width: 100%;
-  height: auto;
+  height: 264rpx; 
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content:space-between;
+}
+.hotRushView-subView{
+  width:244rpx;
+  height:244rpx;
+}
+
+/**分类*/
+.catogary-view{
+  width: 100%;
+  height: 400rpx;
+  background-color: red;
 }
