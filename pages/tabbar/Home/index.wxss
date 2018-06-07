@@ -85,18 +85,14 @@
 
 .sub-themeview{
   width: 100%;
-  height: 240rpx;
+  height: auto;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
    margin-top: 20rpx;
    margin-bottom: 20rpx; 
-}
-.themeView-item{
-  width: 25%;
-  height: auto;
-  
+   background-color: orange;
 }
 .themeView-item-image{
   width: 99%;

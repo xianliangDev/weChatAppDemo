@@ -20,7 +20,7 @@
   <!--theme四大主题 线上商品 附近商家 一起拼团 推荐好友-->
   <view class='sub-themeview'>
     <block wx:for="{{themes}}" wx:key="*key">
-      <view class='themeView-item'>
+      <view class='themeView-item' style='width:25%;height:{{hotRushViewHeight}}rpx'>
          <image src='{{item.iconUrl}}' class='themeView-item-image' mode="widthFix"></image> 
       </view>
     </block>
