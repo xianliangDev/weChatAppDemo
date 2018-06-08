@@ -42,6 +42,35 @@ Page({
     panicBuyingSubjectJson:{},
     presellSubjectJson:{},
     subjectJsons:[],
+    sub0_0: {}, 
+    sub0_1: {},
+    sub0_2: {},
+    sub0_3: {},
+    sub0_4: {},
+    sub0_5: {},
+    sub0_6: {},
+    sub0_7: {},
+
+    sub1_0: {},
+    sub1_1: {},
+    sub1_2: {},
+    sub1_3: {},
+    sub1_4: {},
+    sub1_5: {},
+    sub1_6: {},
+    sub1_7: {},
+
+    sub2_0: {},
+    sub2_1: {},
+    sub2_2: {},
+    sub2_3: {},
+    sub2_4: {},
+    sub2_5: {},
+    sub2_6: {},
+    sub2_7: {},
+
+    /**商品类别 */
+    catJsons:[],
 
     /**自适应功能的变量需要 */
     subThemeViewWidth:0,
@@ -71,11 +100,59 @@ Page({
           hotSubjectJson : res.data.hotSubjectJson,
           nearSubjectJson : res.data.nearSubjectJson,
           panicBuyingSubjectJson : res.data.panicBuyingSubjectJson,
-          presellSubjectJson : res.data.presellSubjectJson
+          presellSubjectJson : res.data.presellSubjectJson,
+          subjectJsons: res.data.subjectJsons,
+          sub0_0: res.data.subjectJsons[0],
+          sub0_1: res.data.subjectJsons[1],
+          sub0_2: res.data.subjectJsons[2],
+          sub0_3: res.data.subjectJsons[3],
+          sub0_4: res.data.subjectJsons[4],
+          sub0_5: res.data.subjectJsons[5],
+          sub0_6: res.data.subjectJsons[6],
+          sub0_7: res.data.subjectJsons[7],
+          sub1_0: res.data.subjectJsons[8],
+          sub1_1: res.data.subjectJsons[9],
+          sub1_2: res.data.subjectJsons[10],
+          sub1_3: res.data.subjectJsons[11],
+          sub1_4: res.data.subjectJsons[12],
+          sub1_5: res.data.subjectJsons[13],
+          sub1_6: res.data.subjectJsons[14],
+          sub1_7: res.data.subjectJsons[15],
+
+          sub2_0: res.data.subjectJsons[16],
+          sub2_1: res.data.subjectJsons[17],
+          sub2_2: res.data.subjectJsons[18],
+          sub2_3: res.data.subjectJsons[19],
+          sub2_4: res.data.subjectJsons[20],
+          sub2_5: res.data.subjectJsons[21],
+          sub2_6: res.data.subjectJsons[22],
+          sub2_7: res.data.subjectJsons[23],
+
         });
         
       }
     });
+    wx.request({
+      url: '' + urlConfig.rootDomain + '/' + urlConfig.shop_API,
+      data: {
+        mode: '2.5',
+        catType: '1',
+        level:'3',
+        imageType:'2',
+        updateTime:''
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json;text/html;charset=UTF-8' // 默认值
+      },
+      success: function (res) {
+        console.log(res.data)
+        that.setData({
+          catJsons: res.data.catJsons
+        });
+
+      }
+    })
     wx.getSystemInfo({
       success: function(res) {
         that.setData(
@@ -136,5 +213,11 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  toDetailsTap:function(){
+    wx.navigateTo({
+      url: '../../Me/index',
+    })
   }
 })

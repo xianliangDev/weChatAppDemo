@@ -12,9 +12,9 @@
     "pages/Me/index"
   ],
   "tabBar": {
-    "color": "#7A7E83",
     "borderStyle": "black",
-    "selectedColor": "red",
+    "color": "#6e6d6b",
+    "selectedColor": "#e64340",
     "backgroundColor": "#ffffff",
     "list": [
       {

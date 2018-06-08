@@ -30,12 +30,64 @@
        <image src='{{panicBuyingSubjectJson.outerShowImageUrl}}' class='hotRushView-subView'></image> 
   </view>
   <!--推荐商品 固定排版分布流-->
-  <view class=''>
-    <view class=''></view>
-    <view class=''></view>
-    <view class=''></view>
+  <view class='recommendGoodsView'>
+    <view class='recommendGoodsView-firstView'>
+      <image class='recommendGoodsViewContent' src='{{sub0_0.outerShowImageUrl}}'></image>
+    </view>
+    <view class='recommendGoodsView-TwoView'>
+      <image class='recommendGoodsView-TwoView-sub' src='{{sub0_1.outerShowImageUrl}}'></image> 
+      <image class='recommendGoodsView-TwoView-sub' src='{{sub0_2.outerShowImageUrl}}'></image> 
+    </view> 
+    <image class='recommendGoodsView-ThirdView' src='{{sub0_3.outerShowImageUrl}}'></image> 
+    <view class='recommendGoodsView-FourthView'>
+      <image class='recommendGoodsView-FView-sub' src='{{sub0_4.outerShowImageUrl}}'></image>
+      <view class='rcolumnseperatorline'></view>
+      <image class='recommendGoodsView-FView-sub' src='{{sub0_5.outerShowImageUrl}}'></image>
+      <view class='recommendGoodsView-FourthView-seperatorline'></view>
+      <image class='recommendGoodsView-FView-sub' src='{{sub0_6.outerShowImageUrl}}'></image>
+      <image class='recommendGoodsView-FView-sub' src='{{sub0_7.outerShowImageUrl}}'></image>
+    </view>
+  </view>
+   <view class='recommendGoodsView'>
+    <view class='recommendGoodsView-firstView'>
+      <image class='recommendGoodsViewContent' src='{{sub1_0.outerShowImageUrl}}'></image>
+    </view>
+    <view class='recommendGoodsView-TwoView'>
+      <image class='recommendGoodsView-TwoView-sub' src='{{sub1_1.outerShowImageUrl}}'></image> 
+      <image class='recommendGoodsView-TwoView-sub' src='{{sub1_2.outerShowImageUrl}}'></image> 
+    </view> 
+    <image class='recommendGoodsView-ThirdView' src='{{sub1_3.outerShowImageUrl}}' bindtap='toDetailsTap'></image> 
+    <view class='recommendGoodsView-FourthView'>
+      <image class='recommendGoodsView-FView-sub' src='{{sub1_4.outerShowImageUrl}}'></image>
+      <view class='rcolumnseperatorline'></view>
+      <image class='recommendGoodsView-FView-sub' src='{{sub1_5.outerShowImageUrl}}'></image>
+      <view class='recommendGoodsView-FourthView-seperatorline'></view>
+      <image class='recommendGoodsView-FView-sub' src='{{sub1_6.outerShowImageUrl}}'></image>
+      <image class='recommendGoodsView-FView-sub' src='{{sub1_7.outerShowImageUrl}}'></image>
+    </view>
+  </view>
+   <view class='recommendGoodsView'>
+    <view class='recommendGoodsView-firstView'>
+      <image class='recommendGoodsViewContent' src='{{sub2_0.outerShowImageUrl}}'></image>
+    </view>
+    <view class='recommendGoodsView-TwoView'>
+      <image class='recommendGoodsView-TwoView-sub' src='{{sub2_1.outerShowImageUrl}}'></image> 
+      <image class='recommendGoodsView-TwoView-sub' src='{{sub2_2.outerShowImageUrl}}'></image> 
+    </view> 
+    <image class='recommendGoodsView-ThirdView' src='{{sub2_3.outerShowImageUrl}}'></image> 
+    <view class='recommendGoodsView-FourthView'>
+      <image class='recommendGoodsView-FView-sub' src='{{sub2_4.outerShowImageUrl}}'></image>
+      <view class='rcolumnseperatorline'></view>
+      <image class='recommendGoodsView-FView-sub' src='{{sub2_5.outerShowImageUrl}}'></image>
+      <view class='recommendGoodsView-FourthView-seperatorline'></view>
+      <image class='recommendGoodsView-FView-sub' src='{{sub2_6.outerShowImageUrl}}'></image>
+      <image class='recommendGoodsView-FView-sub' src='{{sub2_7.outerShowImageUrl}}'></image>
+    </view>
   </view>
   <!--分类-->
   <view class='catogary-view'>
+    <block wx:for='{{catJsons}}' wx:key='{{item.catId}}'>
+      <image src='{{item.catImage}}' class='catogary-view-image'></image>
+    </block>
   </view>
 </view>
