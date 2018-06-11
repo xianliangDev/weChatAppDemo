@@ -1,2 +1,34 @@
-<!--pages/tabbar/Me/index.wxml-->
-<text>pages/tabbar/Me/index.wxml</text>
+<!--index.wxml-->
+<view class="container">
+  <view  bindtap="bindViewTap" class="userinfo">
+   <image class='photoBg' src='../../../image/me/photo_bg.png'>
+    <!-- <view class='headrPanel'></view> -->
+   </image>
+   <view class='headrPanel'>
+     <view class='headrPanel-content'>
+      <text class='headrPanel-content-number'>0</text>
+      <text class='headrPanel-content-title'>收藏的宝贝</text>
+     </view>
+     <view class='headrPanel-content'>
+      <text class='headrPanel-content-number'>0</text>
+      <text class='headrPanel-content-title'>收藏的店铺</text>
+     </view>
+     <view class='headrPanel-content'>
+      <text class='headrPanel-content-number'>0</text>
+      <text class='headrPanel-content-title'>收货地址</text>
+     </view>
+   </view>
+  </view>
+  <view class="info_list">
+    <block wx:for="{{userListInfo}}" wx:key="{{item.infoType}}">
+        <view class="weui_cell">
+            <view class="weui_cell_hd"><image src="{{item.icon}}"></image></view>
+            <view class="weui_cell_bd">
+                <view class="weui_cell_bd_p"> {{item.text}} </view>
+            </view>
+            <view wx:if="{{item.isunread}}" class="badge">{{item.unreadNum}}</view>
+            <image  class="with_arrow"  src='../../../image/common/arrow_right.png'></image>
+        </view>
+    </block>
+  </view>
+</view>
