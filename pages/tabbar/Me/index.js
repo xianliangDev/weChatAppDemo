@@ -2,6 +2,29 @@
 Page({
   data: {
     userInfo: {},
+    isLogin: true,
+    orderStatus:[{
+        statusType:'1',
+        icon:'../../../image/me/tuijian.png',
+        text:'待付款',
+        num:3
+    }, {
+      statusType: '2',
+      icon: '../../../image/me/tuijian.png',
+      text: '待发货',
+      num: 6
+      }, {
+        statusType: '3',
+        icon: '../../../image/me/tuijian.png',
+        text: '待收货',
+        num: 2
+    }, {
+      statusType: '4',
+      icon: '../../../image/me/tuijian.png',
+      text: '评价',
+      num: 0
+      }
+    ],
     userListInfo: [{
       infoType:'1',
       icon: '../../../image/me/tuijian.png',

@@ -1,23 +1,72 @@
 /* pages/tabbar/Me/index.wxss */
+@import '../../templates/orderStatus.wxss';
 .container {
   background-color: #F8F8F8;
 }
 .userinfo {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20rpx;
   align-items: center;
   background: #e5e5e5;
 }
 
+.photoBg{
+  width: 100%;
+  height: 300rpx;
+}
+
+.userinfo-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 211rpx;
+  z-index: 99;
+}
 .userinfo-avatar {
   width: 128rpx;
   height: 128rpx;
-  margin: 20rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  margin-left: 80rpx;
   border-radius: 50%;
+  background-color: #e5e5e5;
+  border:white solid 4rpx;
+
 }
 .userinfo-nickname {
-  color: #333;
+  color: white;
+  margin-left: 20rpx;
+  width: 400rpx;
+  font-size: 12px;
+}
+
+.userinfo-orders{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 300rpx;
+  background-color: white;
+  margin: 20rpx 0rpx;
+}
+.userinfo-orders-all{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    flex: 1;
+    border-bottom: #e5e5e5 solid 1rpx;
+    box-sizing: border-box;
+}
+.userinfo-orders-panel{
+  display: flex;
+  flex-direction: row;
+  flex: 2;
+  width: 100%;
 }
 
 .info_list {
@@ -26,6 +75,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+}
+.weui_cell-allOrder{
+   position: relative;
+    display: flex;
+    padding: 15px;
+    width: 90%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-bottom: 0px solid #dadada;
 }
 .weui_cell{
     position: relative;
@@ -55,10 +114,7 @@
   color: #939393;
 }
 
-.photoBg{
-  width: 100%;
-  height: 300rpx;
-}
+
 
 .headrPanel{
   display: flex;
