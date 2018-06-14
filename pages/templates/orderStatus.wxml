@@ -1,0 +1,8 @@
+
+<template name="orderStatus">
+  <view  class='orderStatus'>
+    <image class='orderStatus-image' src='{{icon}}'></image>
+    <text class='orderStatus-title'>{{text}}</text>
+    <view class='orderStatus-num'>{{num}}</view>
+  </view>
+</template>

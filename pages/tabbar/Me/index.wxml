@@ -1,9 +1,17 @@
 <!--index.wxml-->
+<import src="../../templates/orderStatus.wxml"/>
 <view class="container">
   <view  bindtap="bindViewTap" class="userinfo">
-   <image class='photoBg' src='../../../image/me/photo_bg.png'>
-    <!-- <view class='headrPanel'></view> -->
-   </image>
+   <image class='photoBg' src='../../../image/me/photo_bg.png'></image>
+   <block wx:if="{{isLogin == true}}">
+    <view class='userinfo-content'>
+      <view class='userinfo-avatar'></view>
+      <text class='userinfo-nickname'>王馨颐</text>
+    </view>
+   </block>
+   <block wx:else>
+      <view ></view>
+   </block>
    <view class='headrPanel'>
      <view class='headrPanel-content'>
       <text class='headrPanel-content-number'>0</text>
@@ -17,6 +25,24 @@
       <text class='headrPanel-content-number'>0</text>
       <text class='headrPanel-content-title'>收货地址</text>
      </view>
+   </view>
+   <view class='userinfo-orders'>
+    <view class='userinfo-orders-all'>
+       <view class="weui_cell-allOrder">
+            <view class="weui_cell_hd">
+            <image src="../../../image/me/tuijian.png"></image></view>
+            <view class="weui_cell_bd">
+                <view class="weui_cell_bd_p">全部订单</view>
+            </view>
+            <image  class="with_arrow"  src='../../../image/common/arrow_right.png'></image>
+        </view>
+    </view>
+    <view class='userinfo-orders-panel'>
+      <block wx:for="{{orderStatus}}" wx:key="{{item.statusType}}">
+        <template is='orderStatus' data='{{...item}}'>
+        </template>
+      </block>
+    </view>
    </view>
   </view>
   <view class="info_list">
