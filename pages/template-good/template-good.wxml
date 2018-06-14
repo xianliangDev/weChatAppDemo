@@ -1,0 +1,10 @@
+<!--pages/template-good/template-good.wxml-->
+<template name="goodscell">
+  <view class=''>
+    <image class='' src=''></image>
+    <view class=''>
+      <text>title</text>
+      <text>言</text>
+    </view>
+  </view>
+</template>

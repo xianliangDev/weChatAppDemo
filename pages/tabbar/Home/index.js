@@ -10,19 +10,23 @@ Page({
     themes:[
       {
         title:'线上商品',
-        iconUrl:'../../../image/top_xian_shang_shang_pin@2x.png'
+        iconUrl:'../../../image/top_xian_shang_shang_pin@2x.png',
+        nextPage:'online'
       },
       {
         title: '附近商家',
-        iconUrl: '../../../image/top_fu_jin_shang_jia@2x.png'
+        iconUrl: '../../../image/top_fu_jin_shang_jia@2x.png',
+        nextPage: 'business'
       },
       {
         title: '一起拼团',
-        iconUrl: '../../../image/top_yi_qi_pin_tuan@2x.png'
+        iconUrl: '../../../image/top_yi_qi_pin_tuan@2x.png',
+        nextPage: 'buygroup'
       },
       {
         title: '推荐好友',
-        iconUrl: '../../../image/top_tui_jian_hao_you@2x.png'
+        iconUrl: '../../../image/top_tui_jian_hao_you@2x.png',
+        nextPage: 'invitefriends'
       }
     ],
     indicatorDots: true,
@@ -219,5 +223,51 @@ Page({
     wx.navigateTo({
       url: '../../Me/index',
     })
+  },
+
+  themelistTap:function(e){
+    console.log(e)
+    var nextPageType = e.currentTarget.dataset.next
+    switch(nextPageType){
+      case "online":
+        wx.navigateTo({
+          url: '../../goodslist/index',
+        })
+        break;
+      case "business":
+        wx.navigateTo({
+          url: '../../goodslist/index',
+        })
+        break;
+      case "buygroup":
+        wx.navigateTo({
+          url: '../../goodslist/index',
+        })
+        break;
+      case "invitefriends":
+        wx.navigateTo({
+          url: '../../goodslist/index',
+        })
+        break;      
+      default:
+        break;
+    }
+  },
+  /**
+   * 点击banner
+   */
+  tapBanner:function(e) {
+    var data = e.currentTarget.dataset
+    console.log(e.currentTarget.dataset)
+    if (data.targettype === '2'){//链接地址
+      wx.navigateTo({
+        url: '../../web-View/webView?title=' + data.title + '&id=' + data.id,
+      })
+    } else if (data.targettype === '1'){//商品详情
+    
+    } else{
+
+    }
+    
   }
 })

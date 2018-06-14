@@ -5,7 +5,7 @@
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
       <block wx:for="{{advertisingJsons}}" wx:key="*this">
         <swiper-item>
-          <image bindtap='' data-id="{{item.url}}" src='{{item.image}}' style='width: 100%;height:{{bannerHeight}}'></image>
+          <image bindtap='tapBanner' data-id="{{item.url}}" data-title="{{item.title}}" data-targetType='{{item.targetType}}' src='{{item.image}}' style='width: 100%;height:{{bannerHeight}}'></image>
         </swiper-item>
       </block>
     </swiper>
@@ -20,7 +20,7 @@
   <!--theme四大主题 线上商品 附近商家 一起拼团 推荐好友-->
    <view class='sub-themeview' style='width: 100%;height:{{subThemeViewHeight}}px'> 
      <block wx:for="{{themes}}" wx:key="*key" style='width:25%;height:{{subThemeViewHeight-20}}px'> 
-          <image src='{{item.iconUrl}}'           mode="widthFix" style='width:98%'></image>  
+          <image src='{{item.iconUrl}}'  data-next='{{item.nextPage}}'         mode="widthFix" style='width:98%' bindtap='themelistTap'></image>  
     </block>
    </view> 
   <!--快速进入商品类目专区-->

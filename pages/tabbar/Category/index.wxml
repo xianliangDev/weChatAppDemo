@@ -1,2 +1,16 @@
-<!--pages/tabbar/Category/index.wxml-->
-<text>pages/tabbar/Category/index.wxml</text>
+<view class="container">
+  <view class='content'>
+    <block wx:for='{{categorys}}' wx:key='{{item.catId}}'>
+      <image class='categoryContent' src='{{item.catImage}}'>
+      </image>
+    </block>
+  </view>
+</view>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

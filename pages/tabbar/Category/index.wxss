@@ -1,1 +1,20 @@
 /* pages/tabbar/Category/index.wxss */
+.container{
+  width: 100%;
+  height: auto;
+}
+.content{
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+}
+.categoryContent{
+  width: 40%;
+  height: 70px;
+  border-radius: 10rpx;
+  margin: 5px 0px 5px 0px;
+}

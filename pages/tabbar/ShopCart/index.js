@@ -5,14 +5,44 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    goodsList: {
+      saveHidden: true,
+      totalPrice: 0,
+      totalScoreToPay: 0,
+      allSelect: true,
+      noSelect: false,
+      list: []
+    },
+    delBtnWidth: 120,    //删除按钮宽度单位（rpx）
   },
 
+  //获取元素自适应后的实际宽度
+  getEleWidth: function (w) {
+    var real = 0;
+    try {
+      var res = wx.getSystemInfoSync().windowWidth;
+      var scale = (750 / 2) / (w / 2);  //以宽度750px设计稿做宽度的自适应
+      // console.log(scale);
+      real = Math.floor(res / scale);
+      return real;
+    } catch (e) {
+      return false;
+      // Do something when catch error
+    }
+  },
+  initEleWidth: function () {
+    var delBtnWidth = this.getEleWidth(this.data.delBtnWidth);
+    this.setData({
+      delBtnWidth: delBtnWidth
+    });
+  },
+  
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.initEleWidth();
+    this.onShow();
   },
 
   /**

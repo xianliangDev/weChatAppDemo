@@ -8,8 +8,9 @@
     "pages/tabbar/Component/index",
     "pages/tabbar/Api/index",
     "pages/logs/logs",
-    "pages/Home/index",
-    "pages/Me/index"
+    "pages/goodslist/index",
+    "pages/Me/index",
+    "pages/web-View/webView"
   ],
   "tabBar": {
     "borderStyle": "black",

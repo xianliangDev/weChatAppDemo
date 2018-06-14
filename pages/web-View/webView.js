@@ -1,15 +1,12 @@
-// pages/tabbar/Discovery/index.js
-var urlConfig = require('../../../urlConfig.js')
+// pages/web-View/webView.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    currentPage:1,
-    freshJsons:[],
-    isnext:'yes',//是否还有下一页内容
-    total:0 //总共有的数据条数
+    _navigationTitle:"云商超市",
+    _url:''
   },
 
   /**
@@ -17,25 +14,16 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    wx.request({
-      url: '' + urlConfig.rootDomain + '/' + urlConfig.execute_API,
-      data:{
-        mode:'6.1',
-        page: that.currentPage
-      },
-      method:'POST',
-      header: {
-        'content-type': 'application/json;text/html;charset=UTF-8' // 默认值
-      },
-      success:function(respondse){
-        console.log(respondse.data)
-        that.setData({
-          freshJsons: respondse.data.freshJsons,
-          total:respondse.data.total,
-          isnext: respondse.data.isnext
-        })
-      }
+    console.log(options)
+    that.setData({
+      _navigationTitle: options.title,//options 是由路由设置过来的参数
+      _url:options.id
     })
+    wx.setNavigationBarTitle({
+      title: that.data._navigationTitle,
+    })
+
+     
   },
 
   /**

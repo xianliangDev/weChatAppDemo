@@ -1,2 +1,12 @@
 <!--pages/tabbar/Discovery/index.wxml-->
-<text>pages/tabbar/Discovery/index.wxml</text>
+<view>
+  <block wx:for='{{freshJsons}}' wx:key='{{item.freshId}}'>
+    <view class='cellcontainer'>
+      <image class='cell-image' src='{{item.outerShowImage}}'></image>
+      <view class='cell-textInfo'>
+        <text class='cell-info-title'>{{item.title}}</text>
+        <text class='cell-info-time'>{{item.createTime}}</text>
+      </view>
+    </view>
+  </block>
+</view>

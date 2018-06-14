@@ -1,1 +1,34 @@
 /* pages/tabbar/Discovery/index.wxss */
+.cellcontainer{
+  width: 100%;
+  height: 90px;
+  border-bottom:#e5e5e5 solid 1px;
+  display: flex;
+  flex-direction: row;
+  align-items: cneter;
+  justify-content: flex-start
+}
+.cell-image{
+  margin-left: 5px;
+  width: 75px;
+  height: 75px;
+  margin-top: 5px;
+}
+.cell-textInfo{
+  margin: 5px 0 5px 5px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: start,
+
+}
+.cell-info-title{
+  width: 100%;
+}
+.cell-info-time{
+  width: 100%;
+  color: rgb(136, 136, 136);
+  font-size: 13px;
+}
