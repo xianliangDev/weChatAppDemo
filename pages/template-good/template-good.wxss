@@ -1,1 +1,34 @@
 /* pages/template-good/template-good.wxss */
+.goodContainer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 80px;
+  background-color: orange;
+  border-bottom: #e5e5e5 solid 1px
+}
+.goodIcon{
+  margin-left: 10px;
+  width: 60px;
+  height: 60px;
+  background-color: red;
+}
+.goodTextInfoContent{
+  margin-left: 10px;
+  margin-right: 10px;
+  display: block;
+  flex: 1;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: lightcoral;
+}
+.good-title{
+  display: block;
+  width: 100%;
+  height: auto;
+  font-size: 14px;
+}
