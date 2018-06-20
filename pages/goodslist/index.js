@@ -6,14 +6,46 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    itemJsons: [],
+    isnext:'yes',//是否还有下一页
+    total: ''//总共商品的数量
   
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that = this;
+    wx.request({
+      url: '' + urlConfig.rootDomain + '/' +  urlConfig.trade_API,
+      data:{
+        mode:'1.3',
+        catId1:'',
+        catId2:'',
+        catId3:'',
+        itemName:'',
+        provId:'',
+        cityId:'',
+        isFreeFee:'',
+        sortNum:'',
+        sortBySales:'',
+        shopId:'',
+        page:'0'
+      },
+      method:'POST',
+      header:{
+        'content-type': 'application/json;text/html;charset=UTF-8'
+      },
+      success:function(response){
+        console.log(response)
+        var data = response.data;
+        that.setData({
+          itemJsons: data.itemJsons,
+          isnext: data.isnext,
+          total: data.total
+        })
+      }
+    })
   },
 
   /**

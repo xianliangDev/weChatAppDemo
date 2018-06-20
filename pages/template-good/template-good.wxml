@@ -1,10 +1,29 @@
 <!--pages/template-good/template-good.wxml-->
 <template name="goodscell">
-  <view class=''>
-    <image class='' src=''></image>
-    <view class=''>
-      <text>title</text>
-      <text>言</text>
+  <view class='cellcontainer' wx:for='{{itemJsons}}' wx:key='{{item.itemId}}'>
+    <image class='good-icon' src='{{item.showImageUrl}}'></image>
+    <view class='good-infoContent'>
+      <text class='good-info-title'>{{item.itemName}}</text>
+      <text class='good-info-adress'>{{item.cityName}}   已售{{item.totalSales}}</text>
+      <view class='good-info-coupon'>
+        <text class='limit'>限</text>
+        <text class='hui'>抵</text>
+      </view>
+      
+      <view class='good-info-bottom'>
+        <text class='goods-price'>¥ {{item.currPrice}}</text>
+        <text class='goods-wuliufee'>{{item.deliveryPrice}}</text>
+        <image class='good-info-cart' src='../../image/common/shopping_cart.png'></image>
+      </view>
     </view>
   </view>
+</template>
+
+<template name="no-goods">
+    <view class="title-box">
+        购物车空空如也～
+    </view>
+    <view class="to-index-btn" bindtap="toIndexPage">
+            去逛逛
+    </view>
 </template>

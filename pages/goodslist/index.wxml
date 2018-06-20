@@ -1,9 +1,6 @@
 <!--pages/tabbar/Home/index.wxml-->
 <import src='../template-good/template-good'/>
 <view class='container'>
-<view class=''>选择条件</view>
-<block wx:for='{{[1,2,3]}}' wx:key='*this'>
-  <template is='goodscell'>
+  <template is="{{itemJsons.length >0 ? 'goodscell':'no-goods'}}" data='{{itemJsons}}'>
   </template>
-</block>
 </view>

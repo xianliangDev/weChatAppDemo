@@ -1,2 +1,3 @@
 /* pages/Home/index.wxss */
 /* pages/tabbar/Home/index.wxss */
+@import '../template-good/template-good.wxss'
