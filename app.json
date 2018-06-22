@@ -10,7 +10,8 @@
     "pages/logs/logs",
     "pages/goodslist/index",
     "pages/Me/index",
-    "pages/web-View/webView"
+    "pages/web-View/webView",
+    "pages/goods-details/goods-details"
   ],
   "tabBar": {
     "borderStyle": "black",
@@ -51,7 +52,7 @@
     ]
   },
   "window": {
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#F8F8F8",
     "navigationBarTitleText": "多米云商超市",
     "navigationBarTextStyle": "black",

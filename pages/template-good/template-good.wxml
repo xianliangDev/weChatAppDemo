@@ -1,13 +1,17 @@
 <!--pages/template-good/template-good.wxml-->
 <template name="goodscell">
-  <view class='cellcontainer' wx:for='{{itemJsons}}' wx:key='{{item.itemId}}'>
+  <view class='cellcontainer' wx:for='{{itemJsons}}' wx:key='{{item.itemId}}' bindtap='toDetailsTap' data-id='{{item.itemId}}'>
     <image class='good-icon' src='{{item.showImageUrl}}'></image>
     <view class='good-infoContent'>
       <text class='good-info-title'>{{item.itemName}}</text>
       <text class='good-info-adress'>{{item.cityName}}   已售{{item.totalSales}}</text>
       <view class='good-info-coupon'>
-        <text class='limit'>限</text>
-        <text class='hui'>抵</text>
+        <text wx:if="{{item.isAreaLimit !== '0'}}" class='limit'>限</text>
+        <text wx:if="{{item.inventoryAmount === '0'}}" class='short'>缺</text>
+        <text wx:if="{{item.useScore !== '0'}}"  class='coupon'>抵</text>
+        <text wx:if="{{item.useCoupon === '1'}}"  class='hui'>券</text>
+        <text wx:if="{{item.itemTag === '1'}}" class='ziying'>自营</text>
+        <text wx:if="{{parseInt(item.backScore) > 0}}" class='backScore'>返</text>
       </view>
       
       <view class='good-info-bottom'>

@@ -1,7 +1,7 @@
 /* pages/template-good/template-good.wxss */
 .cellcontainer{
     display: flex; 
-    height:220rpx;
+    height:240rpx;
     flex-direction: row; 
     align-items: center;
     justify-content: flex-start;
@@ -12,11 +12,11 @@
     margin-right: 20rpx;
     margin-left: 20rpx;
     width: 180rpx;
-    height: 180rpx;
+    height: 200rpx;
     z-index: 100;
 }
 .good-infoContent{
-  height: 180rpx;
+  height: 200rpx;
   width: 530rpx;  
   /* margin-right: 0px; */
   display: flex;
@@ -27,8 +27,8 @@
 }
 .good-info-title{
   width: 100%;
-  height: 60rpx;
-  line-height: 28rpx;
+  height: 80rpx;
+  line-height: 36rpx;
   font-size: 14px;
 }
 .good-info-adress{
@@ -37,7 +37,7 @@
   height: 14px;
   line-height: 14px;
   font-size: 13px;
-  color: lightgray;
+  color: #888888;
 }
 .good-info-coupon{
   padding: 5px 0px 5px 0px;
@@ -48,24 +48,81 @@
   align-items: center;
   justify-content: flex-start;
 }
+/**是否限区域*/
 .good-info-coupon .limit{
   width: 30rpx;
   height: 30rpx;
   line-height: 30rpx;
   border-radius: 5rpx;
-  background-color: blue;
+  background-color: #5ED1B2;
   font-size: 10px;
   text-align: center;
+  color: white;
 }
+/** 是否缺货*/
+.good-info-coupon .short{
+  margin-left: 10rpx;
+  width: 30rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  border-radius: 5rpx;
+  background-color: #969696;
+  font-size: 10px;
+  text-align: center;
+  color: white;
+}
+
+ /** 农币可抵百分比 */
+.good-info-coupon .coupon{
+  margin-left: 10rpx;
+  width: 30rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  border-radius: 5rpx;
+  background-color: #FAA308;
+  font-size: 10px;
+  text-align: center;
+  color: white;
+}
+
+/** 是否显示用券 0否 1是 */
 .good-info-coupon .hui{
   margin-left: 10rpx;
   width: 30rpx;
   height: 30rpx;
   line-height: 30rpx;
   border-radius: 5rpx;
-  background-color: green;
+  background-color: #428DCC;
   font-size: 10px;
   text-align: center;
+  color: white;
+}
+/** 商品标签 1 自营 2他营 */
+.good-info-coupon .ziying{
+  margin-left: 10rpx;
+  width: 50rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  border-radius: 5rpx;
+  background-color: #DD2727;
+  font-size: 10px;
+  text-align: center;
+  color: white;
+}
+/** 返回农币 */
+.good-info-coupon .backScore{
+  margin-left: 10rpx;
+  width: 50rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  border-radius: 5rpx;
+  background-color: #DD2727;
+  font-size: 10px;
+  text-align: center;
+  color: white;
+}
+.good-info-coupon :first-child{
+  margin-left: 0rpx;
 }
 .good-info-bottom{
   width: 100%;
