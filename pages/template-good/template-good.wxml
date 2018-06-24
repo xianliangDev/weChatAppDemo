@@ -25,9 +25,6 @@
 
 <template name="no-goods">
     <view class="title-box">
-        购物车空空如也～
-    </view>
-    <view class="to-index-btn" bindtap="toIndexPage">
-            去逛逛
+        空空如也暂无商品销售～
     </view>
 </template>

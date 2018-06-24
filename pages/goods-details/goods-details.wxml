@@ -1,2 +1,90 @@
 <!--pages/goods-details/goods-details.wxml-->
-<text>pages/goods-details/goods-details.wxml</text>
+<import src='../template-comments/index.wxml'/>
+<view class='container'>
+  <view class='swiper-container'>
+    <swiper class='swiper-box' autoplay='{{autoplay}}' interval='{{interval}}' duration='{{duration}}' style='height:750rpx' bindchange="swiperchange">
+      <block wx:for='{{images}}' wx:key='*this'>
+        <swiper-item>
+          <image src='{{item}}'  mode="widthFix"  lazy-load="true"/>
+        </swiper-item>
+      </block>
+    </swiper> 
+     <view class="dots">  
+            <block wx:for="{{images}}" wx:key="unique">  
+                <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>  
+            </block>  
+        </view>  
+  </view>
+  <view class='goods-info'>
+    <view class='goods-info-title'>
+    {{itemName}}
+    </view>
+    <view class='goods-infoPrice-shareContent'>
+      <view class='goods-info-price'>
+      ¥{{currPrice}}
+      </view>
+      <view class='goods-info-share'>
+         <image src='../../image/common/nav_share.png' class='goods-info-share'></image>
+      </view>
+    </view>
+     <view class='good-info-coupon'>
+        <text wx:if="{{itemType === '1'}}" class='itemtype'>热销</text>
+        <text wx:elif="{{itemType === '2'}}" class='itemtype'>预售</text>
+        <text wx:elif="{{itemType === '3'}}" class='itemtype'>抢购</text>
+         <text wx:if="{{itemTag === '1'}}" class='ziying'>自营</text>
+          <text wx:if="{{useScore !== '0' && useScore.length > 0}}"  class='coupon'>农币抵{{useScore}}%</text>
+          <text wx:if="{{isAreaLimit !== '0'}}" class='limit'>限区域</text>
+        <text wx:if="{{inventoryAmount === '0'}}" class='short'>缺货</text>
+       <text wx:if="{{freeCount > 0}}" class='freeCount'>满{{freeCount}}件包邮</text>
+           <text wx:if="{{parseInt(backScore) > 0 || backScore.length>0}}" class='backScore'>返农币{{backScore}}%</text>
+       
+     
+      </view>
+    <view class='goods-info-feeSaleAmoutAdress'>
+    <text style='width: 33%;font-size:13px'>{{deliveryPrice}}</text>
+    <text style='width: 33%;text-align: center;font-size:13px'>销量{{totalSales}}笔</text>
+    <text style='width: 28%;text-align:right;font-size:13px'>{{cityName}}</text>
+    </view>
+  </view>
+  <view class='goods-commonts'>
+    <view  class='title'>
+    商品评价({{commentJsons.length}})
+    </view>
+    <view class='content'>
+      <template is='cellcomments' data='{{commentJsons}}'>
+      </template>
+    </view>
+  </view>
+  <view class='moreComments'>
+     <view class='commentbutton'>查看更多评价</view>  
+  </view>
+  <view class='shop-info'>
+    <view class='nameiconCotent'>
+      <image lazy-load='true' src='{{shopJson.shopIconUrl}}' style='width:60rpx;height:60rpx;border-radius:50%'></image>
+      <text style='margin-left:20rpx;font-size:13px'>{{shopJson.shopName}}</text>
+    </view>
+    <view class='detail'>
+      <view class='content'>
+        <image class='shopIcon' src='../../image/common/shop.png'></image>
+        <view class='scan'>进店逛逛</view>
+      </view>
+    </view>
+    <view class='delivery'>{{deliveryInfo}}</view>
+  </view>
+  <view class='moreComments'>
+     <view class='commentbutton'>点击查看更多详情 </view>  
+  </view>
+  <view class="footer-box">        
+        <view class="contact">
+          <contact-button style="opacity:0;position:absolute;" type="default-dark"  session-from="weapp" size="27"></contact-button>
+          <view style='position:absolute;bottom:10rpx;'> 客服 </view>
+        </view>
+        <view class="shop-cart-btn" bindtap="goShopCar">
+            <view class="shop-num">({{shopNum}})</view>
+            <view style='position:absolute;bottom:10rpx;'> 购物车 </view>
+        </view>
+        <view class="join-shop-cart" bindtap="addShopCar">加入购物车</view>
+        <view class="now-buy" bindtap="tobuy">立即购买</view>
+   </view>
+</view>
+

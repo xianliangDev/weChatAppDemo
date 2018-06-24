@@ -16,7 +16,7 @@ Page({
       {
         title: '附近商家',
         iconUrl: '../../../image/top_fu_jin_shang_jia@2x.png',
-        nextPage: 'business'
+        nextPage: 'shops'
       },
       {
         title: '一起拼团',
@@ -234,9 +234,9 @@ Page({
           url: '../../goodslist/index',
         })
         break;
-      case "business":
+      case "shops":
         wx.navigateTo({
-          url: '../../goodslist/index',
+          url: '../../shopslist/index?targetId=' + this.data.nearSubjectJson.subjectId,
         })
         break;
       case "buygroup":
