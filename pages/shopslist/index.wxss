@@ -1,1 +1,38 @@
 /* pages/shopslist/index.wxss */
+.content{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom:1rpx solid #e5e5e5;
+  width: 100%;
+  height: 180rpx;
+}
+.content .shopIcon{
+  margin: 20rpx;
+  width: 140rpx;
+  height: 140rpx;
+}
+.content .shopinfo{
+  width: 560rpx;
+  height: 140rpx;
+  font-size: 14px;
+}
+
+.shopinfo .level{
+  bottom: 0rpx;
+  align-self: flex-end;
+  margin-top: 20rpx;
+  width: 560rpx;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.level-image{
+  width:34rpx;
+  height:34rpx;
+  margin-right: 16rpx;
+}

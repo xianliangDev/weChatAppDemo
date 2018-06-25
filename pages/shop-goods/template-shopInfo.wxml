@@ -1,0 +1,14 @@
+<!--pages/shop-goods/template-shopInfo.wxml-->
+<template name='shophome'>
+  <view class='iconShopNameContent'>
+    <image  src='../../image/me/photo_bg.png'></image>
+    <image class='shopIcon' src='{{shopIconUrl}}'></image>
+    <view class='shopName'>{{shopName}}
+    </view>
+  </view>
+  
+</template>
+
+<template name='shopStory'>
+
+</template>

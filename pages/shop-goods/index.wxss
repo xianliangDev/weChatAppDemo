@@ -1,0 +1,19 @@
+/* pages/shop-goods/index.wxss */
+@import 'template-shopInfo.wxss';
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.shop-hot-goods{
+
+}
+.shop-recomment-goods{
+
+}
+.shop-all-goodsbtn{
+
+}

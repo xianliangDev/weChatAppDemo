@@ -7,7 +7,9 @@ Page({
    */
   data: {
     lat:0,//纬度
-    lng:0//经度
+    lng:0,//经度
+    shopJsons:[],//店铺列表
+    total:0,//店铺总个数
 
   },
 
@@ -48,7 +50,8 @@ Page({
         console.log(response)
         var data = response.data;
         that.setData({
-
+          shopJsons: data.shopJsons,
+          total: data.total
         })
       }
     })
@@ -101,5 +104,15 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  /**
+   * 店铺详情，店铺商品和店铺等级
+   */
+  toShopGoods:function(e){
+      console.log(e)
+      wx.navigateTo({
+        url: "../shop-goods/index?shopId=" + e.currentTarget.dataset.id
+      })
   }
 })

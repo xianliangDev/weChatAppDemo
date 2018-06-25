@@ -1,0 +1,6 @@
+<!--pages/shop-goods/index.wxml-->
+<import src='template-shopInfo.wxml'/>
+<view class='container'>
+  <template is='shophome' data='{{shopName,shopIconUrl}}'/>
+
+</view>

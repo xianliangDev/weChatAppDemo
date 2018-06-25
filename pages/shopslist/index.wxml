@@ -1,3 +1,14 @@
 <!--pages/shopslist/index.wxml-->
 <view class='container'>
+  <block wx:for='{{shopJsons}}' wx:for-item='item' wx:key='{{item.shopId}}'>
+    <view class='content' bindtap='toShopGoods' data-id='{{item.shopId}}'>
+      <image class='shopIcon' src='{{item.shopIconUrl}}'></image>
+       <view class='shopinfo'>
+        <view class='title'>{{item.shopName}}</view>
+        <view class='level' >
+          <image src='../../image/seller_level_1.png' class='level-image' wx:for='{{[1,2,3,4,5]}}' wx:key='*this'></image>
+        </view>
+      </view> 
+    </view>
+  </block>
 </view>
