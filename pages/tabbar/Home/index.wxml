@@ -25,69 +25,69 @@
    </view> 
   <!--快速进入商品类目专区-->
   <view class='hotRushView'>
-     <image src='{{hotSubjectJson.outerShowImageUrl}}' class='hotRushView-subView'></image> 
-      <image src='{{presellSubjectJson.outerShowImageUrl}}' class='hotRushView-subView'></image> 
-       <image src='{{panicBuyingSubjectJson.outerShowImageUrl}}' class='hotRushView-subView'></image> 
+     <image src='{{hotSubjectJson.outerShowImageUrl}}' class='hotRushView-subView' bindtap='taphotRushView' data-obj='{{hotSubjectJson}}'></image> 
+      <image src='{{presellSubjectJson.outerShowImageUrl}}' class='hotRushView-subView' bindtap='taphotRushView' data-obj='{{presellSubjectJson}}'></image> 
+       <image src='{{panicBuyingSubjectJson.outerShowImageUrl}}' class='hotRushView-subView' bindtap='taphotRushView' data-obj='{{panicBuyingSubjectJson}}'></image> 
   </view>
   <!--推荐商品 固定排版分布流-->
   <view class='recommendGoodsView'>
-    <view class='recommendGoodsView-firstView'>
+    <view class='recommendGoodsView-firstView' data-id='{{sub0_0.targetId}}' bindtap='toShopGoods'>
       <image class='recommendGoodsViewContent' src='{{sub0_0.outerShowImageUrl}}'></image>
     </view>
     <view class='recommendGoodsView-TwoView'>
-      <image class='recommendGoodsView-TwoView-sub' src='{{sub0_1.outerShowImageUrl}}'></image> 
-      <image class='recommendGoodsView-TwoView-sub' src='{{sub0_2.outerShowImageUrl}}'></image> 
+      <image class='recommendGoodsView-TwoView-sub' src='{{sub0_1.outerShowImageUrl}}' bindtap='taphotRushView'  data-obj='{{sub0_1}}'></image> 
+      <image class='recommendGoodsView-TwoView-sub' src='{{sub0_2.outerShowImageUrl}}' bindtap='taphotRushView'  data-obj='{{sub0_2}}'></image> 
     </view> 
-    <image class='recommendGoodsView-ThirdView' src='{{sub0_3.outerShowImageUrl}}'></image> 
+    <image class='recommendGoodsView-ThirdView' src='{{sub0_3.outerShowImageUrl}}' bindtap='taphotRushView'  data-obj='{{sub0_3}}'></image> 
     <view class='recommendGoodsView-FourthView'>
-      <image class='recommendGoodsView-FView-sub' src='{{sub0_4.outerShowImageUrl}}'></image>
+      <image class='recommendGoodsView-FView-sub' src='{{sub0_4.outerShowImageUrl}}' bindtap='toShopGoods'  data-id='{{sub0_4.targetId}}'></image>
       <view class='rcolumnseperatorline'></view>
-      <image class='recommendGoodsView-FView-sub' src='{{sub0_5.outerShowImageUrl}}'></image>
+      <image class='recommendGoodsView-FView-sub' src='{{sub0_5.outerShowImageUrl}}' bindtap='toShopGoods'  data-id='{{sub0_5.targetId}}'></image>
       <view class='recommendGoodsView-FourthView-seperatorline'></view>
-      <image class='recommendGoodsView-FView-sub' src='{{sub0_6.outerShowImageUrl}}'></image>
-      <image class='recommendGoodsView-FView-sub' src='{{sub0_7.outerShowImageUrl}}'></image>
+      <image class='recommendGoodsView-FView-sub' src='{{sub0_6.outerShowImageUrl}}' bindtap='toShopGoods'  data-id ='{{sub0_6.targetId}}'></image>
+      <image class='recommendGoodsView-FView-sub' src='{{sub0_7.outerShowImageUrl}}' bindtap='toShopGoods'  data-id ='{{sub0_7.targetId}}'></image>
     </view>
   </view>
    <view class='recommendGoodsView'>
     <view class='recommendGoodsView-firstView'>
-      <image class='recommendGoodsViewContent' src='{{sub1_0.outerShowImageUrl}}'></image>
+      <image class='recommendGoodsViewContent' src='{{sub1_0.outerShowImageUrl}}' data-id='{{sub1_0.targetId}}' bindtap='toShopGoods'></image>
     </view>
     <view class='recommendGoodsView-TwoView'>
-      <image class='recommendGoodsView-TwoView-sub' src='{{sub1_1.outerShowImageUrl}}'></image> 
-      <image class='recommendGoodsView-TwoView-sub' src='{{sub1_2.outerShowImageUrl}}'></image> 
+      <image class='recommendGoodsView-TwoView-sub' src='{{sub1_1.outerShowImageUrl}}' bindtap='taphotRushView'  data-obj='{{sub1_1}}'></image> 
+      <image class='recommendGoodsView-TwoView-sub' src='{{sub1_2.outerShowImageUrl}}' bindtap='taphotRushView'  data-obj='{{sub1_2}}'></image> 
     </view> 
-    <image class='recommendGoodsView-ThirdView' src='{{sub1_3.outerShowImageUrl}}' bindtap='toDetailsTap'></image> 
+    <image class='recommendGoodsView-ThirdView' src='{{sub1_3.outerShowImageUrl}}' bindtap='taphotRushView'  data-obj='{{sub1_3}}'></image> 
     <view class='recommendGoodsView-FourthView'>
-      <image class='recommendGoodsView-FView-sub' src='{{sub1_4.outerShowImageUrl}}'></image>
+      <image class='recommendGoodsView-FView-sub' src='{{sub1_4.outerShowImageUrl}}' bindtap='toShopGoods'  data-id ='{{sub1_4.targetId}}'></image>
       <view class='rcolumnseperatorline'></view>
-      <image class='recommendGoodsView-FView-sub' src='{{sub1_5.outerShowImageUrl}}'></image>
+      <image class='recommendGoodsView-FView-sub' src='{{sub1_5.outerShowImageUrl}}' bindtap='toShopGoods'  data-id ='{{sub1_5.targetId}}'></image>
       <view class='recommendGoodsView-FourthView-seperatorline'></view>
-      <image class='recommendGoodsView-FView-sub' src='{{sub1_6.outerShowImageUrl}}'></image>
-      <image class='recommendGoodsView-FView-sub' src='{{sub1_7.outerShowImageUrl}}'></image>
+      <image class='recommendGoodsView-FView-sub' src='{{sub1_6.outerShowImageUrl}}' bindtap='toShopGoods'  data-id ='{{sub1_6.targetId}}'></image>
+      <image class='recommendGoodsView-FView-sub' src='{{sub1_7.outerShowImageUrl}}' bindtap='toShopGoods'  data-id ='{{sub1_7.targetId}}'></image>
     </view>
   </view>
    <view class='recommendGoodsView'>
     <view class='recommendGoodsView-firstView'>
-      <image class='recommendGoodsViewContent' src='{{sub2_0.outerShowImageUrl}}'></image>
+      <image class='recommendGoodsViewContent' src='{{sub2_0.outerShowImageUrl}}' data-id='{{sub2_0.targetId}}' bindtap='toShopGoods'></image>
     </view>
     <view class='recommendGoodsView-TwoView'>
-      <image class='recommendGoodsView-TwoView-sub' src='{{sub2_1.outerShowImageUrl}}'></image> 
-      <image class='recommendGoodsView-TwoView-sub' src='{{sub2_2.outerShowImageUrl}}'></image> 
+      <image class='recommendGoodsView-TwoView-sub' src='{{sub2_1.outerShowImageUrl}}' bindtap='taphotRushView'  data-obj='{{sub2_1}}'></image> 
+      <image class='recommendGoodsView-TwoView-sub' src='{{sub2_2.outerShowImageUrl}}' bindtap='taphotRushView'  data-obj='{{sub2_2}}'></image> 
     </view> 
-    <image class='recommendGoodsView-ThirdView' src='{{sub2_3.outerShowImageUrl}}'></image> 
+    <image class='recommendGoodsView-ThirdView' src='{{sub2_3.outerShowImageUrl}}' bindtap='taphotRushView'  data-obj='{{sub2_3}}'></image> 
     <view class='recommendGoodsView-FourthView'>
-      <image class='recommendGoodsView-FView-sub' src='{{sub2_4.outerShowImageUrl}}'></image>
+      <image class='recommendGoodsView-FView-sub' src='{{sub2_4.outerShowImageUrl}}' bindtap='toShopGoods'  data-id ='{{sub2_4.targetId}}'></image>
       <view class='rcolumnseperatorline'></view>
-      <image class='recommendGoodsView-FView-sub' src='{{sub2_5.outerShowImageUrl}}'></image>
+      <image class='recommendGoodsView-FView-sub' src='{{sub2_5.outerShowImageUrl}}' bindtap='toShopGoods'  data-id ='{{sub2_5.targetId}}'></image>
       <view class='recommendGoodsView-FourthView-seperatorline'></view>
-      <image class='recommendGoodsView-FView-sub' src='{{sub2_6.outerShowImageUrl}}'></image>
-      <image class='recommendGoodsView-FView-sub' src='{{sub2_7.outerShowImageUrl}}'></image>
+      <image class='recommendGoodsView-FView-sub' src='{{sub2_6.outerShowImageUrl}}' bindtap='toShopGoods'  data-id ='{{sub2_6.targetId}}'></image>
+      <image class='recommendGoodsView-FView-sub' src='{{sub2_7.outerShowImageUrl}}' bindtap='toShopGoods'  data-id ='{{sub2_7.targetId}}'></image>
     </view>
   </view>
   <!--分类-->
   <view class='catogary-view'>
     <block wx:for='{{catJsons}}' wx:key='{{item.catId}}'>
-      <image src='{{item.catImage}}' class='catogary-view-image'></image>
+      <image src='{{item.catImage}}' class='catogary-view-image' bindtap='tapEigthCatogory' data-id='{{item.catId}}'></image>
     </block>
   </view>
 </view>

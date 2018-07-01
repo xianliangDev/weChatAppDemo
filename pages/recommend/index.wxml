@@ -1,0 +1,25 @@
+<!--pages/recommend/index.wxml-->
+<view class='container'>
+  <view class='header'>
+    <view style='width:100%;height:80rpx;font-size:13px;line-height:80rpx;text-align: center'>我的推荐码</view>
+    <view style='width:100%;height:80rpx;font-size:30px;line-height:80rpx;text-align: center;color: rgb(221, 39, 39)'>{{myCode}}</view>
+    <button open-type="share" class='shareview'>
+      <image src='../../image/common/tui_jian_icon.png' class='icon'></image>
+      <view class='text' >立即推荐</view>
+    </button>
+  </view>
+  <view class='incomeContent'>
+    <text class='title'>总收益</text>
+    <view class='incomeDatacontent'>
+      <image src='../../image/common/cash.png' class='icon'></image>
+      <view class='data'>¥ {{income}}</view>
+    </view>
+  </view>
+   <view class='incomeContent'>
+    <text class='title'>我推荐的好友</text>
+    <view class='incomeDatacontent'>
+      <image src='../../image/common/arrow_right.png' class='icon'></image>
+    </view>
+  </view>
+  <view class='guiderule'>推荐规则</view> 
+</view>

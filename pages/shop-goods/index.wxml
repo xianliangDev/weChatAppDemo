@@ -1,6 +1,75 @@
 <!--pages/shop-goods/index.wxml-->
 <import src='template-shopInfo.wxml'/>
 <view class='container'>
-  <template is='shophome' data='{{shopName,shopIconUrl}}'/>
-
+  <template is='shophome' data='{{shopName,shopIconUrl,shopSignUrl,deliverySpeed,descConformance,serviceAttitude,shopNotice}}'/>
+  <view wx:if='{{itemJsons.length>0}}'>
+    <view class='sectionheader'>
+        <image src='../../image/category_rec.png' class='' lazy-load='true'/>
+        <view class='title'>店铺热销</view>
+    </view>
+    <view class='shop-goods-container'>
+      <view class='shop-goods-box' wx:for-items='{{itemJsons}}' wx:key='{{item.itemId}}' bindtap='toDetailsTap' data-id='{{item.itemId}}'>
+          <view class='img-box'>
+            <image src="{{item.showImageUrl}}" class="image" mode="aspectFill" lazy-load="true"/>
+        </view>
+        <view class="goods-title">{{item.itemName}}</view>
+        <view class='goods-preferential'>
+          <text wx:if="{{item.isAreaLimit !== '0'}}" class='limit'>限</text>
+          <text wx:if="{{item.inventoryAmount === '0'}}" class='short'>缺</text>
+          <text wx:if="{{item.useScore !== '0'}}"  class='coupon'>抵</text>
+          <text wx:if="{{item.useCoupon === '1'}}"  class='hui'>券</text>
+          <text wx:if="{{item.itemTag === '1'}}" class='ziying'>自营</text>
+          <text wx:if="{{parseInt(item.backScore) > 0}}" class='backScore'>返</text>
+        </view>
+        <view style='display:flex;'>
+          <view class="goods-price">¥ {{item.currPrice}}</view>
+          <image class='good-info-cart' src='../../image/common/shopping_cart.png'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:if='{{recommendItemJsons.length>0}}'>
+    <view class='sectionheader'>
+        <image src='../../image/category_rec.png' class='' lazy-load='true'/>
+        <view class='title'>店铺推荐</view>
+    </view>
+    <view class='shop-goods-container'>
+      <view class='shop-goods-box' wx:for-items='{{itemJsons}}' wx:key='{{item.itemId}}' bindtap='toDetailsTap' data-id='{{item.itemId}}'>
+          <view class='img-box'>
+            <image src="{{item.showImageUrl}}" class="image" mode="aspectFill" lazy-load="true"/>
+        </view>
+        <view class="goods-title">{{item.itemName}}</view>
+        <view class='goods-preferential'>
+          <text wx:if="{{item.isAreaLimit !== '0'}}" class='limit'>限</text>
+          <text wx:if="{{item.inventoryAmount === '0'}}" class='short'>缺</text>
+          <text wx:if="{{item.useScore !== '0'}}"  class='coupon'>抵</text>
+          <text wx:if="{{item.useCoupon === '1'}}"  class='hui'>券</text>
+          <text wx:if="{{item.itemTag === '1'}}" class='ziying'>自营</text>
+          <text wx:if="{{parseInt(item.backScore) > 0}}" class='backScore'>返</text>
+        </view>
+        <view style='display:flex;'>
+          <view class="goods-price">¥ {{item.currPrice}}</view>
+          <image class='good-info-cart' src='../../image/common/shopping_cart.png'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="footer-box">        
+        <view class="content">
+          <image src='../../image/common/seller_collection_off.png'></image>
+          <view class='title'> 收藏 </view>
+        </view>
+        <view class="content" bindtap="goShopCar">
+            <image src='../../image/common/seller_category.png'></image>
+            <view class='title'> 热门分类 </view>
+        </view>
+        <view class="content" bindtap="addShopCar">
+          <image src='../../image/common/seller_telephone.png'/>
+          <view class='title'> 商家客服 </view>
+        </view>
+        <view class="content" bindtap="tobuy">
+          <image src='../../image/common/seller_story.png'></image>
+          <view class='title'> 店铺故事 </view>
+        </view>
+   </view>        
 </view>

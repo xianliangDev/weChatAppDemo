@@ -1,12 +1,26 @@
 <!--pages/shop-goods/template-shopInfo.wxml-->
 <template name='shophome'>
   <view class='iconShopNameContent'>
-    <image  src='../../image/me/photo_bg.png'></image>
+    <image  src='{{shopSignUrl}}'></image>
     <image class='shopIcon' src='{{shopIconUrl}}'></image>
     <view class='shopName'>{{shopName}}
     </view>
   </view>
-  
+  <view class='shoplevel'>
+    <view style='font-size: 13px'>店铺等级：</view>
+    <block wx:for='{{[1,2,3,4]}}' wx:key='*this'>
+    <image src='../../image/seller_level_1.png' class='xin'></image>
+    </block>
+  </view>
+  <view class='servicecontent'>
+    <view class='sercielevel'>描述相符：<text style='color: rgb(221, 39, 39)'>{{descConformance}}分</text></view>
+    <view class='sercielevel'>服务态度：<text style='color: rgb(221, 39, 39)'>{{serviceAttitude}}分</text></view>
+    <view class='sercielevel'>发货速度：<text style='color: rgb(221, 39, 39)'>{{deliverySpeed}}分</text>
+    </view>
+  </view>
+  <view class='shop-notice'>
+  <text>{{shopNotice?shopNotice:'暂无公告信息'}}</text>
+  </view>
 </template>
 
 <template name='shopStory'>

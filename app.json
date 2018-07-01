@@ -13,7 +13,9 @@
     "pages/web-View/webView",
     "pages/goods-details/goods-details",
     "pages/shopslist/index",
-    "pages/shop-goods/index"
+    "pages/shop-goods/index",
+    "pages/recommend/index",
+    "pages/commonsale/index"
   ],
   "tabBar": {
     "borderStyle": "black",

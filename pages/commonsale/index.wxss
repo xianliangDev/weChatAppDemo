@@ -1,12 +1,10 @@
-/* pages/shop-goods/index.wxss */
-@import 'template-shopInfo.wxss';
+/* pages/commonsale/index.wxss */
 .container{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+  flex: 1
+}
+.innerShowImageUrl{
   width: 100%;
-  padding-bottom: 100rpx;
+  height: 250rpx;
 }
 
 .sectionheader{
@@ -154,45 +152,4 @@
   width: 60rpx;
   height: 44rpx;
   right: 10px;
-}
-
-/**添加购物车*/
-.footer-box{
-  border-top: #e5e5e5 solid 1rpx;
-  width: 100%;
-  height: 100rpx;
-  background-color: #fff;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  /* box-shadow:0 0 8rpx 0 ; */
-}
-.footer-box .content {
-  position: relative;
-  width: 25%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-right: #e5e5e5 solid 1rpx;
-  box-sizing: border-box;
-  /*line-height: 100rpx;
-  text-align: center;
-  padding-top: 26rpx;*/
-  /* font-size: 20rpx;
-  
-  background: url("https://cdn.it120.cc/images/weappshop/kefu.png") no-repeat center 21rpx;
-  background-size: 55rpx auto; */
-}
-.footer-box .content image{
-  position: relative;
-  width: 46rpx;
-  height: 46rpx;
-
-}
-.footer-box .content .title{
-  text-align: center;
-  font-size: 13px;
 }

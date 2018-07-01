@@ -1,0 +1,26 @@
+<!--pages/commonsale/index.wxml-->
+<view class='container'>
+  <image class='innerShowImageUrl' src='{{outerShowImageUrl}}'/>
+  <view wx:if='{{itemJsons.length>0}}'>
+    <view class='shop-goods-container'>
+      <view class='shop-goods-box' wx:for-items='{{itemJsons}}' wx:key='{{item.itemId}}' bindtap='toDetailsTap' data-id='{{item.itemId}}'>
+          <view class='img-box'>
+            <image src="{{item.showImageUrl}}" class="image" mode="aspectFill" lazy-load="true"/>
+        </view>
+        <view class="goods-title">{{item.itemName}}</view>
+        <view class='goods-preferential'>
+          <text wx:if="{{item.isAreaLimit !== '0'}}" class='limit'>限</text>
+          <text wx:if="{{item.inventoryAmount === '0'}}" class='short'>缺</text>
+          <text wx:if="{{item.useScore !== '0'}}"  class='coupon'>抵</text>
+          <text wx:if="{{item.useCoupon === '1'}}"  class='hui'>券</text>
+          <text wx:if="{{item.itemTag === '1'}}" class='ziying'>自营</text>
+          <text wx:if="{{parseInt(item.backScore) > 0}}" class='backScore'>返</text>
+        </view>
+        <view style='display:flex;'>
+          <view class="goods-price">¥ {{item.currPrice}}</view>
+          <image class='good-info-cart' src='../../image/common/shopping_cart.png'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

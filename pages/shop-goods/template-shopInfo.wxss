@@ -29,3 +29,59 @@
   line-height: 60rpx;
   position: absolute;
 }
+
+.shoplevel{
+  background-color: white;
+  height: 80rpx;
+  width: 100%;
+  display: flex;
+  padding-left: 40rpx;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  border-bottom: #e5e5e5 solid 1rpx;
+}
+.shoplevel .xin{
+  margin-left: 10rpx;
+  width: 34rpx;
+  height: 34rpx;
+}
+
+.servicecontent{
+  background-color: white;
+  height: 80rpx;
+  width: 100%;
+  display: flex;
+  padding-left: 40rpx;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-bottom: #e5e5e5 solid 1rpx;
+}
+.servicecontent .sercielevel{
+  width: 33%;
+  height: 80rpx;
+  font-size: 13px;
+  line-height: 80rpx;
+  text-align: center;
+  box-sizing: border-box;
+  border-right: #e5e5e5 solid 1rpx;
+  
+}
+.servicecontent :last-child{
+  border-right:0rpx;
+}
+
+.shop-notice{
+  margin-top: 20rpx;
+  width: 100%;
+  font-size: 13px;
+  background-color: white;
+  height: auto;
+  line-height:  13px;
+  padding-left:40rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+}

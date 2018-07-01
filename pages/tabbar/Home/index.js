@@ -240,13 +240,23 @@ Page({
         })
         break;
       case "buygroup":
-        wx.navigateTo({
-          url: '../../goodslist/index',
+        // wx.navigateTo({
+        //   url: '../../goodslist/index',
+        // })
+        wx.showToast({
+          title: '暂未开通拼团功能',
+          icon: '',
+          image: '',
+          duration: 0,
+          mask: true,
+          success: function(res) {},
+          fail: function(res) {},
+          complete: function(res) {},
         })
         break;
       case "invitefriends":
         wx.navigateTo({
-          url: '../../goodslist/index',
+          url: '../../recommend/index',
         })
         break;      
       default:
@@ -269,5 +279,38 @@ Page({
 
     }
     
+  },
+
+  /**
+   * 相对应的类型下的商品
+   */
+  taphotRushView:function(e){
+    console.log(e)
+    var hotSubjectJson = e.currentTarget.dataset.obj
+    var subjectId = hotSubjectJson.subjectId
+    var subjectName = hotSubjectJson.subjectName
+    var subjectType = hotSubjectJson.subjectType
+    var outerShowImageUrl = hotSubjectJson.outerShowImageUrl
+    wx.navigateTo({
+      url: '../../commonsale/index?targetId=' + subjectId + '&subjectName=' + subjectName + '&subjectType=' + subjectType + '&outerShowImageUrl=' + outerShowImageUrl
+    })
+  },
+  /**
+   * 店铺详情，店铺商品和店铺等级
+   */
+  toShopGoods: function (e) {
+    wx.navigateTo({
+      url: "../../shop-goods/index?shopId=" + e.currentTarget.dataset.id
+    })
+  },
+
+  /**
+   * 首页八大主题
+   */
+  tapEigthCatogory:function(e){
+    wx.navigateTo({
+      url: "../../goodslist/index?catId=" + e.currentTarget.dataset.id
+    })
   }
+  
 })

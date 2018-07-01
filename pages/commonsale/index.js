@@ -1,4 +1,4 @@
-// pages/Home/index.js
+// pages/commonsale/index.js
 var urlConfig = require('../../urlConfig.js')
 Page({
 
@@ -6,55 +6,49 @@ Page({
    * 页面的初始数据
    */
   data: {
-    itemJsons: [],
-    isnext:'yes',//是否还有下一页
-    total: '',//总共商品的数量,
-    currentPage: 1,//当前页码
-    catId1:''//默认为空
-  
+    subjectName:'',//标题
+    subjectType:'',//类型
+    targetId:'',//项目ID
+    outerShowImageUrl:'',//顶部显示的链接
+    pageNum:1,//首页
+    itemJsons:[],//列表
+    isnext:'yes'//是否还有下一页
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-
-    /**
-     * 传递过来的参数
-     */
-    var catId = options.catId
-    if(!catId || catId.length === 0)
-    catId = ''
+    console.log(options)
+    var that = this
+    that.setData({
+      subjectName: options.subjectName,
+      subjectType: options.subjectType,
+      targetId: options.targetId,
+      outerShowImageUrl: options.outerShowImageUrl
+    })
+    wx.setNavigationBarTitle({
+      title: options.subjectName,
+    })
     wx.request({
-      url: '' + urlConfig.rootDomain + '/' +  urlConfig.trade_API,
-      data:{
-        mode:'1.3',
-        catId1: catId,
-        catId2:'',
-        catId3:'',
-        itemName:'',
-        provId:'',
-        cityId:'',
-        isFreeFee:'',
-        sortNum:'',
-        sortBySales:'',
-        shopId:'',
-        page: this.data.currentPage
+      url: '' + urlConfig.rootDomain + '/' + urlConfig.trade_API,
+      data: {
+        mode: '1.2',
+        page: this.pageNum,
+        subjectId: options.targetId
       },
-      method:'POST',
-      header:{
+      method: 'POST',
+      header: {
         'content-type': 'application/json;text/html;charset=UTF-8'
       },
-      success:function(response){
+      success: function (response) {
         console.log(response)
         var data = response.data;
         that.setData({
-          itemJsons: data.itemJsons,
-          isnext: data.isnext,
-          total: data.total,
-          catId1:catId
+          itemJsons: data.itemJsons ? data.itemJsons:[],
+          isnext: data.isnext
         })
-      }
+      },
     })
   },
 
@@ -97,29 +91,27 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    if (this.data.isnext === 'no'){
+      wx.showToast({
+        title: '已是最后一页！',
+      })
+      return;
+    }
+    
     var that = this;
     // 显示加载图标  
     wx.showLoading({
       title: '玩命加载中',
     })
     // 页数+1  
-    var currentPage_ = this.data.currentPage
-    currentPage_ += 1;
+    var pageNum = this.data.pageNum
+    pageNum += 1;
     wx.request({
       url: '' + urlConfig.rootDomain + '/' + urlConfig.trade_API,
       data: {
-        mode: '1.3',
-        catId1: '',
-        catId2: '',
-        catId3: '',
-        itemName: '',
-        provId: '',
-        cityId: '',
-        isFreeFee: '',
-        sortNum: '',
-        sortBySales: '',
-        shopId: '',
-        page: currentPage_
+        mode: '1.2',
+        page: pageNum,
+        subjectId: this.data.targetId
       },
       method: 'POST',
       header: {
@@ -138,25 +130,18 @@ Page({
           itemJsons: cont,
           isnext: response.data.isnext,
           total: response.data.total,
-          currentPage:currentPage_
+          pageNum: pageNum
         })
         // 隐藏加载框  
         wx.hideLoading();
       }
     })
-
-  },  
+  },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
   
-  },
-  toDetailsTap: function (e) {
-    console.log(e)
-    wx.navigateTo({
-      url: "../goods-details/goods-details?id=" + e.currentTarget.dataset.id
-    })
-  },
+  }
 })
